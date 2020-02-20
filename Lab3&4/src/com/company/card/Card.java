@@ -4,8 +4,6 @@ import com.company.account.Account;
 
 public abstract class Card {
 
-
-
     public Account account;
 
     public Card() {
