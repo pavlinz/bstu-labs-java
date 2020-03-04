@@ -1,22 +1,14 @@
 package by.belstu.it.vasilevskiy.basejava;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.UnsupportedEncodingException;
-import java.sql.Wrapper;
 import java.util.Arrays;
-
 import static java.lang.Math.*;
-
 
 /**
  * author Vasilevskiy Pavel
  * version 1.0
  */
-
 
 public class JavaTest {
 
@@ -148,10 +140,11 @@ public class JavaTest {
 
         double[] aq = {0.01, 0.2, -0.3, 4.5, -6.7};
         for (double x: aq) {
-            System.out.println(x + " ");
+            System.out.print(x + " ");
         }
 
         // Работа с объектом WrapperString
+        System.out.println();
         WrapperString ws = new WrapperString("Wrapper String");
         ws.replace('a', 'o');
         System.out.println(ws.toString());

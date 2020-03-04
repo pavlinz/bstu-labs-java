@@ -1,14 +1,40 @@
 package com.company.main;
 
+import com.company.account.Account;
 import com.company.authorization.Authorization;
-
 import java.util.Scanner;
 
+import com.company.card.Card;
+import com.company.card.DebitCard;
+import com.company.cardmanager.CardManager;
+import com.company.cardset.CardSet;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
+
 public class Main {
+
+    private static final Logger log = Logger.getLogger(Main.class);
 
     public static void main(String[] args) {
 
         try {
+            String log4jConfPath = "D:\\OneDrive\\Study\\Course_2\\2\\Java\\" +
+                                    "Solutions\\Lab3&4\\src\\resources\\log4j.properties";
+            PropertyConfigurator.configure(log4jConfPath);
+            log.info("Start program...!");
+
+            CardSet cardSet = new CardSet();
+            CardManager cm = new CardManager();
+            cm.createCardSet(cardSet);
+            for (Account item: cardSet.getCardSet()) {
+                System.out.println(item.toString());
+            }
+
+            CardSet secCardSet = new CardSet();
+            cm.generateCardSet(secCardSet);
+            for (Account item: secCardSet.getCardSet()) {
+                System.out.println(item.toString());
+            }
 
             Scanner in = new Scanner(System.in);
             byte answer = 0;
