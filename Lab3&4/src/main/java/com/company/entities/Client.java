@@ -23,10 +23,10 @@ public class Client implements IClient {
 
     @Override
     public void showBalance() {
-        if (dcFlag == true && dc.account.isStatus() == true) {
+        if (dcFlag && dc.account.isStatus()) {
             System.out.println(dc.getBalance());
         }
-        else if (ocFlag && oc.account.isStatus() == true) {
+        else if (ocFlag && oc.account.isStatus()) {
             System.out.println(oc.getBalance());
         }
     }
@@ -34,12 +34,12 @@ public class Client implements IClient {
     @Override
     public boolean blockCard() {
 
-        if (dcFlag == true && dc.account.isStatus() == true) {
+        if (dcFlag && dc.account.isStatus()) {
             System.out.println("\nYour card was blocked\n");
             dc.account.setStatus(false);
             return true;
         }
-        else if (ocFlag == true && oc.account.isStatus() == true) {
+        else if (ocFlag && oc.account.isStatus()) {
             System.out.print("\nYour card was blocked\n");
             oc.account.setStatus(false);
             return true;
@@ -52,14 +52,14 @@ public class Client implements IClient {
 
     @Override
     public boolean makePayment() {
-        if (dcFlag == true && dc.account.isStatus() == true) {
+        if (dcFlag && dc.account.isStatus()) {
             Scanner in = new Scanner(System.in);
             System.out.print("Enter cost: ");
             dc.makePurchase(in.nextDouble());
             System.out.println();
             return true;
         }
-        else if (ocFlag == true && oc.account.isStatus() == true) {
+        else if (ocFlag && oc.account.isStatus()) {
             Scanner in = new Scanner(System.in);
             System.out.print("Enter cost: ");
             oc.makePurchase(in.nextDouble());
@@ -75,13 +75,13 @@ public class Client implements IClient {
     public boolean replenishAccount() {
         Scanner in = new Scanner(System.in);
 
-        if (dcFlag == true && dc.account.isStatus() == true) {
+        if (dcFlag && dc.account.isStatus()) {
             System.out.print("\nPlease, enter the amount which you replenish: ");
             dc.refill(in.nextDouble());
             System.out.println();
             return true;
         }
-        else if (ocFlag == true && oc.account.isStatus() == true) {
+        else if (ocFlag && oc.account.isStatus()) {
             System.out.print("\nPlease, enter the amount which you replenish: ");
             oc.refill(in.nextDouble());
             System.out.println();

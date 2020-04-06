@@ -22,8 +22,6 @@ public class Account {
         log.info("New account created");
     }
 
-
-
     public void replenishAccount(double amount) {
         balanceAmount += amount;
         log.info("Account replenished");
@@ -34,13 +32,10 @@ public class Account {
         balanceAmount -= cost;
     }
 
-
     @Override
     public String toString() {
         return String.valueOf(getBalanceAmount()) + " " + String.valueOf(isStatus());
     }
-
-
 
     public double getBalanceAmount() {
         return balanceAmount;

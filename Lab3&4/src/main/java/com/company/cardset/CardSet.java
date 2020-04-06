@@ -6,7 +6,7 @@ import java.util.List;
 
 public class CardSet {
 
-    private ArrayList<Account> cardSet;
+    public List<Account> cardSet;
 
     public CardSet() {
         cardSet = new ArrayList<Account>();
