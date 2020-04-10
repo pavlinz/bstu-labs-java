@@ -32,12 +32,15 @@ public class Main {
             cm.createCardSet(cardSet);
 
             Account newAcc = new Account();
-
+            String jsonString;
             try(FileWriter writer = new FileWriter("card.json", false))
             {
-                String jsonString =  JSON.toJSONString(newAcc);
+                jsonString =  JSON.toJSONString(newAcc);
                 writer.write(jsonString);
             }
+
+            Account secAcc = JSON.parseObject(jsonString, Account.class);
+            System.out.println(secAcc.toString());
 
             System.out.println("Count of accounts -> " + cardSet.cardSet.stream().count());
             System.out.println("Sum of accounts -> " + cardSet.cardSet.stream().mapToDouble((s) -> s.getBalanceAmount()).sum());
